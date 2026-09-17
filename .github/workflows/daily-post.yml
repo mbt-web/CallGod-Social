@@ -1,0 +1,61 @@
+name: Daily Social Post
+
+on:
+  workflow_dispatch:
+    inputs:
+      media_type:
+        description: "Media type to post (leave blank for either, oldest pending first)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - image
+          - video
+
+permissions:
+  contents: write
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Determine media type for this run
+        id: media_type
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "value=${{ inputs.media_type }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 1 * * *" ]; then
+            echo "value=image" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then
+            echo "value=video" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run poster script
+        env:
+          META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
+          META_PAGE_ID: ${{ secrets.META_PAGE_ID }}
+          META_IG_USER_ID: ${{ secrets.META_IG_USER_ID }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          MEDIA_TYPE_FILTER: ${{ steps.media_type.outputs.value }}
+        run: node scripts/post-to-social.js
+
+      - name: Commit updated queue
+        if: always()
+        run: |
+          git config user.name "callgod-bot"
+          git config user.email "actions@github.com"
+          git add content/queue.json
+          git diff --staged --quiet || git commit -m "Update social queue [skip ci]"
+          git push

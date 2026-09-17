@@ -1,0 +1,15 @@
+name: Display Server Time
+on:
+  schedule:
+    # Runs every 5 minutes as an example run now
+    - cron: '*/5 * * * *'
+  workflow_dispatch: # Allows manual trigger from the GitHub UI
+
+jobs:
+  show-time:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current UTC time
+        run: |
+          echo "The current GitHub server time (UTC) is:"
+          date -u

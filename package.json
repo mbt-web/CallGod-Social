@@ -1,0 +1,16 @@
+{
+  "name": "callgod-social-poster",
+  "version": "1.0.0",
+  "description": "Posts queued content to Facebook and Instagram for Call God",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "post": "node scripts/post-to-social.js"
+  },
+  "dependencies": {
+    "googleapis": "^181.0.0",
+    "open": "^11.0.4"
+  }
+}
