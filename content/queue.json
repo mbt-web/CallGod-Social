@@ -93,10 +93,14 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18096594722102425"
+      }
+    },
+    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: The OAuth client was not found..",
+    "postedAt": "2026-09-18T13:08:00.276Z"
   },
   {
     "id": "2026-09-20-daily-verse-image",
