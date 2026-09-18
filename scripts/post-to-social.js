@@ -164,7 +164,7 @@ async function getYouTubeAccessToken() {
   if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
     throw new Error("Missing YouTube OAuth environment variables.");
   }
-
+  console.error("CL ID:",YT_CLIENT_ID);
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
