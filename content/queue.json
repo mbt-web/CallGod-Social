@@ -8,14 +8,14 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
+    "status": "failed",
     "result": {
       "instagram": {
-        "id": "17905634172330497"
+        "id": "18163586434485591"
       }
     },
     "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
-    "postedAt": "2026-09-18T01:00:45.971Z"
+    "postedAt": "2026-09-18T18:17:28.290Z"
   },
   {
     "id": "2026-09-17-daily-verse-video",
