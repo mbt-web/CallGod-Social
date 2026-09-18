@@ -8,7 +8,7 @@
       "facebook",
       "instagram"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "17905634172330497"
@@ -27,7 +27,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "17888203629614592"
@@ -45,7 +45,7 @@
       "facebook",
       "instagram"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {},
     "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead.. IG: Instagram (publish) error: Media ID is not available.",
     "postedAt": "2026-09-18T18:05:28.004Z"
@@ -60,7 +60,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18117318136973765"
@@ -93,7 +93,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18096594722102425"
@@ -126,7 +126,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18098714873457324"
@@ -163,7 +163,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18126138490852434"
@@ -200,7 +200,7 @@
       "instagram",
       "youtube"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18130168885707780"
