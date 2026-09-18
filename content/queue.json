@@ -163,10 +163,18 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18126138490852434"
+      },
+      "youtube": {
+        "id": "73OuWZciMS4",
+        "url": "https://youtu.be/73OuWZciMS4"
+      }
+    },
+    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
+    "postedAt": "2026-09-18T16:30:34.551Z"
   },
   {
     "id": "2026-09-22-daily-verse-image",
