@@ -6,7 +6,7 @@
  * Instagram, and YouTube. Supports images and video.
  *
  * ENV VARS REQUIRED (set as GitHub Actions secrets):
- *   META_PAGE_ACCESS_TOKEN   System user / page access token
+ *   META_PAGE_ACCESS_TOKEN   Page Access Token
  *   META_PAGE_ID             Facebook Page ID
  *   META_IG_USER_ID          Instagram Business Account ID
  *   YOUTUBE_REFRESH_TOKEN    OAuth2 Refresh Token
@@ -37,7 +37,6 @@ function assertEnv() {
   if (!PAGE_ACCESS_TOKEN) missing.push("META_PAGE_ACCESS_TOKEN");
   if (!PAGE_ID) missing.push("META_PAGE_ID");
   if (!IG_USER_ID) missing.push("META_IG_USER_ID");
-  // YouTube is optional unless an item targets it, but we can check if credentials are set
   if (missing.length) {
     console.error(`Missing required Meta env vars: ${missing.join(", ")}`);
     process.exit(1);
@@ -60,9 +59,13 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-// ---------------- Facebook ----------------[cite: 1]
+// ---------------- Facebook ----------------
 
 async function postToFacebook({ caption, mediaUrl, mediaType }) {
+  if (!PAGE_ID || PAGE_ID === "me") {
+    throw new Error("META_PAGE_ID is missing or incorrectly set to 'me'. You must use a numeric Facebook Page ID.");
+  }
+
   if (mediaType === "video") {
     const url = `${GRAPH_BASE}/${PAGE_ID}/videos`;
     const params = new URLSearchParams({
@@ -88,7 +91,7 @@ async function postToFacebook({ caption, mediaUrl, mediaType }) {
   return data;
 }
 
-// ---------------- Instagram ----------------[cite: 1]
+// ---------------- Instagram ----------------
 
 async function createIgContainer({ caption, mediaUrl, mediaType }) {
   const createUrl = `${GRAPH_BASE}/${IG_USER_ID}/media`;
@@ -164,7 +167,6 @@ async function getYouTubeAccessToken() {
   if (!YT_CLIENT_ID || !YT_CLIENT_SECRET || !YT_REFRESH_TOKEN) {
     throw new Error("Missing YouTube OAuth environment variables.");
   }
-  console.error("CL ID:",YT_CLIENT_ID);
   const res = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -190,7 +192,6 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
 
   const accessToken = await getYouTubeAccessToken();
 
-  // Fetch the remote video file buffer from the public raw URL
   console.log("  Downloading video for YouTube upload...");
   const videoRes = await fetch(mediaUrl);
   if (!videoRes.ok) {
@@ -198,11 +199,8 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
   }
   const videoBuffer = Buffer.from(await videoRes.arrayBuffer());
 
-  // Extract a title from the first line of the caption, or fallback
   const firstLine = caption.split("\n")[0].replace(/[#"]/g, "").trim();
   const title = firstLine.length > 95 ? firstLine.substring(0, 92) + "..." : (firstLine || "Daily Verse #CallGod");
-  
-  // Automatically tag vertical videos as Shorts if appropriate, or include #Shorts in description
   const description = `${caption}\n\n#Shorts #CallGod`;
 
   const metadata = {
@@ -210,7 +208,7 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
       title,
       description,
       tags: ["CallGod", "BibleVerse", "Catholic", "Shorts"],
-      categoryId: "22", // People & Blogs
+      categoryId: "22",
     },
     status: {
       privacyStatus: "public",
@@ -218,7 +216,6 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
     },
   };
 
-  // Step 1: Initialize Resumable Upload Session
   const initRes = await fetch(
     "https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status",
     {
@@ -243,7 +240,6 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
     throw new Error("YouTube resumable upload session did not return a location header.");
   }
 
-  // Step 2: Upload Binary Video Data
   console.log("  Uploading video stream to YouTube...");
   const uploadRes = await fetch(uploadUrl, {
     method: "PUT",
@@ -262,7 +258,7 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
   return { id: uploadData.id, url: `https://youtu.be/${uploadData.id}` };
 }
 
-// ---------------- Main ----------------[cite: 1]
+// ---------------- Main ----------------
 
 async function main() {
   assertEnv();
@@ -329,7 +325,7 @@ async function main() {
   queue[nextIndex] = {
     ...item,
     status: hadError ? "failed" : "posted",
-  result,
+    result,
     error: hadError ? errorMessage.trim() : null,
     postedAt: new Date().toISOString(),
   };
