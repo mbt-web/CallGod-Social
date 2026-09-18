@@ -77,10 +77,9 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-19.mp4",
     "platforms": [
-    "facebook",
+      "facebook",
       "instagram",
       "youtube"
-      
     ],
     "status": "pending",
     "result": null,
@@ -107,7 +106,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-20.mp4",
     "platforms": [
-         "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -136,7 +135,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-21.mp4",
     "platforms": [
-     "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -165,7 +164,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-22.mp4",
     "platforms": [
-    "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -194,7 +193,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-23.mp4",
     "platforms": [
-     "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -223,7 +222,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-24.mp4",
     "platforms": [
-     "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -252,7 +251,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-25.mp4",
     "platforms": [
-     "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -311,7 +310,8 @@
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-27.mp4",
     "platforms": [
       "facebook",
-      "instagram"
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -338,7 +338,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-28.mp4",
     "platforms": [
-        "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -353,8 +353,8 @@
     "mediaType": "image",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/images/2026-09-29.jpg",
     "platforms": [
-     "facebook",
-      "instagram"     
+      "facebook",
+      "instagram"
     ],
     "status": "pending",
     "result": null,
@@ -367,7 +367,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-09-29.mp4",
     "platforms": [
-    "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],
@@ -410,7 +410,7 @@
     "mediaType": "video",
     "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-01.mp4",
     "platforms": [
-    "facebook",
+      "facebook",
       "instagram",
       "youtube"
     ],

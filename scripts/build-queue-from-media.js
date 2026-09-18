@@ -5,25 +5,18 @@
  * Scans your local CallGod-Assets folders (images/ and videos/) and
  * builds content/queue.json.
  *
- * Since images and videos now post at SEPARATE scheduled times
- * (images 9am, videos 6pm — see daily-post.yml), this creates a
- * SEPARATE queue entry for each media type found per date, rather
- * than picking just one. If only one type exists for a date, only
- * that one entry is created. If neither exists, that date is
- * skipped with a warning.
+ * Images and videos post at SEPARATE scheduled times (images 9am,
+ * videos 6pm — triggered externally via cron-job.org), so this
+ * creates a SEPARATE queue entry for each media type found per date.
+ *
+ * PLATFORM RULES (enforced here regardless of what captions.json
+ * says, since YouTube only accepts video uploads):
+ *   - IMAGE entries: facebook + instagram only — "youtube" is
+ *     always stripped out, even if present in captions.json.
+ *   - VIDEO entries: facebook + instagram + youtube.
  *
  * USAGE (run from inside CallGod-Social):
  *   node scripts/build-queue-from-media.js
- *
- * WHAT IT EXPECTS:
- *   - captions.json in the same folder as this script — one entry
- *     per date with { id, caption, platforms }. id is the date in
- *     YYYY-MM-DD form (e.g. "2026-09-17").
- *   - Local media files named to match: videos/2026-09-17.mp4 or
- *     images/2026-09-17.jpg (jpg/jpeg/png all checked for images;
- *     mp4/mov checked for video).
- *
- * CONFIGURE THESE TWO PATHS for your machine:
  */
 const ASSETS_LOCAL_PATH = "D:\\2026\\Apps\\CallGod-Assets";
 const GITHUB_USERNAME = "mbt-web";
@@ -76,41 +69,45 @@ function main() {
       continue;
     }
 
+    // Whatever captions.json says, treat facebook/instagram as the
+    // only base platforms — youtube is decided here, not inherited.
+    const rawBase = entry.platforms || ["facebook", "instagram"];
+    const basePlatforms = rawBase.filter((p) => p === "facebook" || p === "instagram");
+
     if (image.found) {
       queue.push({
         id: `${dateId}-daily-verse-image`,
         caption: entry.caption,
         mediaType: "image",
         mediaUrl: buildRawUrl("images", dateId, image.ext),
-        platforms: entry.platforms || ["facebook", "instagram"],
+        platforms: basePlatforms, // images: facebook + instagram ONLY, youtube always excluded
         status: "pending",
         result: null,
         error: null,
         postedAt: null,
       });
       imageCount++;
-      console.log(`✅ ${dateId}: queued IMAGE (${image.ext})`);
+      console.log(`✅ ${dateId}: queued IMAGE (${image.ext}) -> ${basePlatforms.join(", ")}`);
     }
 
     if (video.found) {
+      const videoPlatforms = [...basePlatforms, "youtube"];
       queue.push({
         id: `${dateId}-daily-verse-video`,
         caption: entry.caption,
         mediaType: "video",
         mediaUrl: buildRawUrl("videos", dateId, video.ext),
-        platforms: entry.platforms || ["facebook", "instagram", "youtube"],
+        platforms: videoPlatforms, // videos: facebook + instagram + youtube
         status: "pending",
         result: null,
         error: null,
         postedAt: null,
       });
       videoCount++;
-      console.log(`✅ ${dateId}: queued VIDEO (${video.ext})`);
+      console.log(`✅ ${dateId}: queued VIDEO (${video.ext}) -> ${videoPlatforms.join(", ")}`);
     }
   }
 
-  // Keep the queue sorted by date so posts go out in chronological
-  // order regardless of which type was appended first per date.
   queue.sort((a, b) => a.id.localeCompare(b.id));
 
   fs.writeFileSync(QUEUE_OUTPUT_PATH, JSON.stringify(queue, null, 2) + "\n", "utf8");
