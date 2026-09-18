@@ -60,10 +60,14 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18117318136973765"
+      }
+    },
+    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: Token has been expired or revoked..",
+    "postedAt": "2026-09-18T09:01:32.842Z"
   },
   {
     "id": "2026-09-19-daily-verse-image",
