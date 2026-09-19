@@ -27,14 +27,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
+      "facebook": {
+        "id": "1014570734965995"
+      },
       "instagram": {
-        "id": "17888203629614592"
+        "id": "18353344768173583"
+      },
+      "youtube": {
+        "id": "7ezZpaKqLQ0",
+        "url": "https://youtu.be/7ezZpaKqLQ0"
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: Token has been expired or revoked..",
-    "postedAt": "2026-09-18T05:07:41.969Z"
+    "error": null,
+    "postedAt": "2026-09-19T05:05:25.222Z"
   },
   {
     "id": "2026-09-18-daily-verse-image",
