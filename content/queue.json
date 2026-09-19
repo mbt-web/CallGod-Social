@@ -45,10 +45,14 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": {},
-    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead.. IG: Instagram (publish) error: Media ID is not available.",
-    "postedAt": "2026-09-18T18:05:28.004Z"
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18022755188864439"
+      }
+    },
+    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
+    "postedAt": "2026-09-19T01:00:44.894Z"
   },
   {
     "id": "2026-09-18-daily-verse-video",
