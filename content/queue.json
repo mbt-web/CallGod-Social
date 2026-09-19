@@ -27,14 +27,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
+      "facebook": {
+        "id": "1014570734965995"
+      },
       "instagram": {
-        "id": "17888203629614592"
+        "id": "18353344768173583"
+      },
+      "youtube": {
+        "id": "7ezZpaKqLQ0",
+        "url": "https://youtu.be/7ezZpaKqLQ0"
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: Token has been expired or revoked..",
-    "postedAt": "2026-09-18T05:07:41.969Z"
+    "error": null,
+    "postedAt": "2026-09-19T05:05:25.222Z"
   },
   {
     "id": "2026-09-18-daily-verse-image",
@@ -45,10 +52,14 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": {},
-    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead.. IG: Instagram (publish) error: Media ID is not available.",
-    "postedAt": "2026-09-18T18:05:28.004Z"
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18022755188864439"
+      }
+    },
+    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
+    "postedAt": "2026-09-19T01:00:44.894Z"
   },
   {
     "id": "2026-09-18-daily-verse-video",
@@ -78,10 +89,15 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "facebook": {
+        "id": "122117564139433037",
+        "post_id": "1234653859733571_122117564163433037"
+      }
+    },
+    "error": "IG: Instagram (publish) error: Media ID is not available.",
+    "postedAt": "2026-09-19T05:00:30.432Z"
   },
   {
     "id": "2026-09-19-daily-verse-video",
