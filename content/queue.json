@@ -52,7 +52,7 @@
       "facebook",
       "instagram"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18022755188864439"
@@ -89,7 +89,7 @@
       "facebook",
       "instagram"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "facebook": {
         "id": "122117564139433037",
