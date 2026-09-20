@@ -121,14 +121,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
+      "facebook": {
+        "id": "2434505607080156"
+      },
       "instagram": {
-        "id": "18096594722102425"
+        "id": "17933822391388109"
+      },
+      "youtube": {
+        "id": "d46P_m9Kxso",
+        "url": "https://youtu.be/d46P_m9Kxso"
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: The OAuth client was not found..",
-    "postedAt": "2026-09-18T13:08:00.276Z"
+    "error": null,
+    "postedAt": "2026-09-20T09:01:27.582Z"
   },
   {
     "id": "2026-09-20-daily-verse-image",
