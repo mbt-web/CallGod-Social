@@ -164,18 +164,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
+      "facebook": {
+        "id": "1804797307364918"
+      },
       "instagram": {
-        "id": "18098714873457324"
+        "id": "17912978061466845"
       },
       "youtube": {
-        "id": "17hMtiTrS3U",
-        "url": "https://youtu.be/17hMtiTrS3U"
+        "id": "-kQrK0DdM6k",
+        "url": "https://youtu.be/-kQrK0DdM6k"
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
-    "postedAt": "2026-09-18T14:38:39.267Z"
+    "error": null,
+    "postedAt": "2026-09-21T09:01:26.672Z"
   },
   {
     "id": "2026-09-21-daily-verse-image",
