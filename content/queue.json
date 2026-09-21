@@ -101,15 +101,18 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
       "facebook": {
-        "id": "122117564139433037",
-        "post_id": "1234653859733571_122117564163433037"
+        "id": "122117956209433037",
+        "post_id": "1234653859733571_122117956233433037"
+      },
+      "instagram": {
+        "id": "17903330613346372"
       }
     },
-    "error": "IG: Instagram (publish) error: Media ID is not available.",
-    "postedAt": "2026-09-19T05:00:30.432Z"
+    "error": null,
+    "postedAt": "2026-09-21T01:00:48.323Z"
   },
   {
     "id": "2026-09-19-daily-verse-video",
