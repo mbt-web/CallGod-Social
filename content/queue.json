@@ -149,10 +149,15 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "facebook": {
+        "id": "122118164697433037",
+        "post_id": "1234653859733571_122118164727433037"
+      }
+    },
+    "error": "IG: Instagram (publish) error: Media ID is not available.",
+    "postedAt": "2026-09-22T01:00:50.098Z"
   },
   {
     "id": "2026-09-20-daily-verse-video",
