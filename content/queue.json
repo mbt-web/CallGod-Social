@@ -9,13 +9,9 @@
       "instagram"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18163586434485591"
-      }
-    },
-    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
-    "postedAt": "2026-09-18T18:17:28.290Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-17-daily-verse-video",
@@ -27,21 +23,10 @@
       "instagram",
       "youtube"
     ],
-    "status": "posted",
-    "result": {
-      "facebook": {
-        "id": "1014570734965995"
-      },
-      "instagram": {
-        "id": "18353344768173583"
-      },
-      "youtube": {
-        "id": "7ezZpaKqLQ0",
-        "url": "https://youtu.be/7ezZpaKqLQ0"
-      }
-    },
+    "status": "pending",
+    "result": null,
     "error": null,
-    "postedAt": "2026-09-19T05:05:25.222Z"
+    "postedAt": null
   },
   {
     "id": "2026-09-18-daily-verse-image",
@@ -53,13 +38,9 @@
       "instagram"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18022755188864439"
-      }
-    },
-    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
-    "postedAt": "2026-09-19T01:00:44.894Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-18-daily-verse-video",
@@ -72,13 +53,9 @@
       "youtube"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18117318136973765"
-      }
-    },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: Token has been expired or revoked..",
-    "postedAt": "2026-09-18T09:01:32.842Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-19-daily-verse-image",
@@ -90,14 +67,9 @@
       "instagram"
     ],
     "status": "pending",
-    "result": {
-      "facebook": {
-        "id": "122117564139433037",
-        "post_id": "1234653859733571_122117564163433037"
-      }
-    },
-    "error": "IG: Instagram (publish) error: Media ID is not available.",
-    "postedAt": "2026-09-19T05:00:30.432Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-19-daily-verse-video",
@@ -110,13 +82,9 @@
       "youtube"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18096594722102425"
-      }
-    },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video. YouTube: YouTube token error: The OAuth client was not found..",
-    "postedAt": "2026-09-18T13:08:00.276Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-20-daily-verse-image",
@@ -143,17 +111,9 @@
       "youtube"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18098714873457324"
-      },
-      "youtube": {
-        "id": "17hMtiTrS3U",
-        "url": "https://youtu.be/17hMtiTrS3U"
-      }
-    },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
-    "postedAt": "2026-09-18T14:38:39.267Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-21-daily-verse-image",
@@ -180,17 +140,9 @@
       "youtube"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18126138490852434"
-      },
-      "youtube": {
-        "id": "73OuWZciMS4",
-        "url": "https://youtu.be/73OuWZciMS4"
-      }
-    },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
-    "postedAt": "2026-09-18T16:30:34.551Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-22-daily-verse-image",
@@ -217,17 +169,9 @@
       "youtube"
     ],
     "status": "pending",
-    "result": {
-      "instagram": {
-        "id": "18130168885707780"
-      },
-      "youtube": {
-        "id": "OTCtDG-Epto",
-        "url": "https://youtu.be/OTCtDG-Epto"
-      }
-    },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
-    "postedAt": "2026-09-18T17:17:25.991Z"
+    "result": null,
+    "error": null,
+    "postedAt": null
   },
   {
     "id": "2026-09-23-daily-verse-image",
@@ -519,6 +463,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-03-daily-verse-video",
+    "caption": "“casting all your worries on him, because he cares for you.” — 1 Peter 5:7\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-03.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-04-daily-verse-image",
     "caption": "“but those who wait for Yahweh will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.” — Isaiah 40:31\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -526,6 +485,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-04-daily-verse-video",
+    "caption": "“but those who wait for Yahweh will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.” — Isaiah 40:31\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-04.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -547,6 +521,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-05-daily-verse-video",
+    "caption": "“Yahweh is my light and my salvation. Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?” — Psalm 27:1\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-05.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-06-daily-verse-image",
     "caption": "“Therefore don't be anxious for tomorrow, for tomorrow will be anxious for itself. Each day's own evil is sufficient.” — Matthew 6:34\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -554,6 +543,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-06-daily-verse-video",
+    "caption": "“Therefore don't be anxious for tomorrow, for tomorrow will be anxious for itself. Each day's own evil is sufficient.” — Matthew 6:34\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-06.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -575,6 +579,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-07-daily-verse-video",
+    "caption": "“I will lift up my eyes to the hills. Where does my help come from? My help comes from Yahweh, who made heaven and earth.” — Psalm 121:1-2\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-07.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-08-daily-verse-image",
     "caption": "“Let us not be weary in doing good, for we will reap in due season, if we don't give up.” — Galatians 6:9\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -582,6 +601,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-08-daily-verse-video",
+    "caption": "“Let us not be weary in doing good, for we will reap in due season, if we don't give up.” — Galatians 6:9\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-08.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -603,6 +637,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-09-daily-verse-video",
+    "caption": "“Also delight yourself in Yahweh, and he will give you the desires of your heart.” — Psalm 37:4\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-09.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-10-daily-verse-image",
     "caption": "“for he has said, \"I will in no way leave you, neither will I in any way forsake you.\"” — Hebrews 13:5\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -610,6 +659,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-10-daily-verse-video",
+    "caption": "“for he has said, \"I will in no way leave you, neither will I in any way forsake you.\"” — Hebrews 13:5\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-10.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -631,6 +695,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-11-daily-verse-video",
+    "caption": "“I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.” — Psalm 139:14\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-11.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-12-daily-verse-image",
     "caption": "“Now may the God of hope fill you with all joy and peace in believing, that you may abound in hope, in the power of the Holy Spirit.” — Romans 15:13\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -638,6 +717,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-12-daily-verse-video",
+    "caption": "“Now may the God of hope fill you with all joy and peace in believing, that you may abound in hope, in the power of the Holy Spirit.” — Romans 15:13\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-12.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -659,6 +753,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-13-daily-verse-video",
+    "caption": "“You will show me the path of life. In your presence is fullness of joy. In your right hand there are pleasures forever more.” — Psalm 16:11\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-13.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-14-daily-verse-image",
     "caption": "“Love is patient and is kind. Love doesn't envy. Love doesn't brag, is not proud, doesn't behave itself inappropriately, doesn't seek its own way, is not provoked, takes no account of evil.” — 1 Corinthians 13:4-5\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -666,6 +775,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-14-daily-verse-video",
+    "caption": "“Love is patient and is kind. Love doesn't envy. Love doesn't brag, is not proud, doesn't behave itself inappropriately, doesn't seek its own way, is not provoked, takes no account of evil.” — 1 Corinthians 13:4-5\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-14.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
@@ -687,6 +811,21 @@
     "postedAt": null
   },
   {
+    "id": "2026-10-15-daily-verse-video",
+    "caption": "“He who dwells in the secret place of the Most High will rest in the shadow of the Almighty. I will say of Yahweh, \"He is my refuge and my fortress, my God, in whom I trust.\"” — Psalm 91:1-2\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-15.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
     "id": "2026-10-16-daily-verse-image",
     "caption": "“for the joy of Yahweh is your strength.” — Nehemiah 8:10\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
     "mediaType": "image",
@@ -694,6 +833,21 @@
     "platforms": [
       "facebook",
       "instagram"
+    ],
+    "status": "pending",
+    "result": null,
+    "error": null,
+    "postedAt": null
+  },
+  {
+    "id": "2026-10-16-daily-verse-video",
+    "caption": "“for the joy of Yahweh is your strength.” — Nehemiah 8:10\n\n➕Get daily Gospels \n📖Read the Bible\n📿Pray the rosary \n👏Prayers of the Saints \n📜Enhance your knowledge on Bible Quiz.\n⛪Search Churches near you\n\n✅Download the app now!\nhttps://www.call-god.com\n\n#PrayerTok #CatholicTok #ChristianTok #FaithTok #BibleVerse #PatronSaint #CatholicApp #PrayWithMe #GodIsGood #PrayerApp #AppReview #ChristianApp #DailyDevotional #SpiritualApp #CallGod #CallGodApp #TalkToGod",
+    "mediaType": "video",
+    "mediaUrl": "https://raw.githubusercontent.com/mbt-web/CallGod-Assets/main/videos/2026-10-16.mp4",
+    "platforms": [
+      "facebook",
+      "instagram",
+      "youtube"
     ],
     "status": "pending",
     "result": null,
