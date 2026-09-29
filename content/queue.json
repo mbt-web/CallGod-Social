@@ -151,10 +151,17 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "facebook": {
+        "id": "4748101158846046"
+      },
+      "instagram": {
+        "id": "18343296427267614"
+      }
+    },
+    "error": "YouTube: YouTube token error: Token has been expired or revoked..",
+    "postedAt": "2026-09-29T09:01:28.431Z"
   },
   {
     "id": "2026-09-21-daily-verse-image",
