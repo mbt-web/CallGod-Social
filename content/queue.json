@@ -172,10 +172,18 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "122120121867433037",
+        "post_id": "1234653859733571_122120121903433037"
+      },
+      "instagram": {
+        "id": "18560299051074721"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-09-30T01:00:54.666Z"
   },
   {
     "id": "2026-09-21-daily-verse-video",
