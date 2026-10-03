@@ -336,10 +336,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "2378422949579462"
+      },
+      "instagram": {
+        "id": "18097280546548864"
+      },
+      "youtube": {
+        "id": "U4p6QunTErE",
+        "url": "https://youtu.be/U4p6QunTErE"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-03T09:01:35.971Z"
   },
   {
     "id": "2026-09-25-daily-verse-image",
