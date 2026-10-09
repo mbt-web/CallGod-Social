@@ -588,10 +588,18 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "122121996243433037",
+        "post_id": "1234653859733571_122121996267433037"
+      },
+      "instagram": {
+        "id": "18101264813643307"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-09T01:00:50.378Z"
   },
   {
     "id": "2026-10-01-daily-verse-image",
