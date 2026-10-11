@@ -1,5 +1,8 @@
 name: Daily Social Post
 
+# Timing is handled externally by cron-job.org, which calls this
+# workflow's dispatch API (image run in the morning, video run in
+# the evening). No native `schedule:` trigger is used.
 on:
   workflow_dispatch:
     inputs:
@@ -13,7 +16,14 @@ on:
           - video
 
 permissions:
-  contents: write
+  contents: write # needed so the workflow can commit the updated queue.json back to the repo
+
+# Never run two posting jobs at once. A second trigger waits for the
+# first to finish, so two runs can't pick the same pending item or
+# race each other when saving the queue.
+concurrency:
+  group: daily-social-post
+  cancel-in-progress: false
 
 jobs:
   post:
@@ -27,19 +37,6 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Determine media type for this run
-        id: media_type
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "value=${{ inputs.media_type }}" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 1 * * *" ]; then
-            echo "value=image" >> "$GITHUB_OUTPUT"
-          elif [ "${{ github.event.schedule }}" = "0 10 * * *" ]; then
-            echo "value=video" >> "$GITHUB_OUTPUT"
-          else
-            echo "value=" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Run poster script
         env:
           META_PAGE_ACCESS_TOKEN: ${{ secrets.META_PAGE_ACCESS_TOKEN }}
@@ -48,14 +45,62 @@ jobs:
           YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
-          MEDIA_TYPE_FILTER: ${{ steps.media_type.outputs.value }}
+          # TikTok secrets are only needed once a queue item lists "tiktok".
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          MEDIA_TYPE_FILTER: ${{ inputs.media_type }}
         run: node scripts/post-to-social.js
 
       - name: Commit updated queue
-        if: always()
+        if: always() # save results even if a platform failed, so status/error is recorded
         run: |
           git config user.name "callgod-bot"
           git config user.email "actions@github.com"
           git add content/queue.json
-          git diff --staged --quiet || git commit -m "Update social queue [skip ci]"
-          git push
+          if git diff --staged --quiet; then
+            echo "No queue changes to commit."
+            exit 0
+          fi
+          git commit -m "Update social queue [skip ci]"
+
+          # Remember what this run started from and what it changed.
+          git show HEAD~1:content/queue.json > /tmp/queue_base.json
+          cp content/queue.json /tmp/queue_ours.json
+
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              echo "Queue saved."
+              exit 0
+            fi
+            echo "Push rejected (attempt $attempt): main moved during this run. Merging by item id..."
+            git fetch origin main
+            git reset --hard origin/main
+            # Keep everything on main; apply only the items THIS run changed.
+            node -e '
+              const fs = require("fs");
+              const read = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
+              const base = read("/tmp/queue_base.json");
+              const ours = read("/tmp/queue_ours.json");
+              const cur = read("content/queue.json");
+              const baseById = new Map(base.map((i) => [i.id, JSON.stringify(i)]));
+              let applied = 0;
+              for (const item of ours) {
+                if (baseById.get(item.id) === JSON.stringify(item)) continue; // untouched by this run
+                const idx = cur.findIndex((c) => c.id === item.id);
+                if (idx === -1) cur.push(item); else cur[idx] = item;
+                applied++;
+              }
+              fs.writeFileSync("content/queue.json", JSON.stringify(cur, null, 2) + "\n");
+              console.log("Applied " + applied + " changed item(s) onto latest main.");
+            '
+            git add content/queue.json
+            if git diff --staged --quiet; then
+              echo "Latest main already contains this run's changes."
+              exit 0
+            fi
+            git commit -m "Update social queue [skip ci]"
+            sleep $((attempt * 3))
+          done
+          echo "Could not save the queue after 5 attempts. Mark the posted item manually in content/queue.json."
+          exit 1
