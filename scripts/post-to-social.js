@@ -412,7 +412,10 @@ async function main() {
           console.log("  💬 Comment added to Facebook post:", comment.id);
         } catch (commentErr) {
           // A failed comment shouldn't fail the whole run — the post
-          // itself already succeeded. Log it and move on.
+          // itself already succeeded. Log it, record the reason in the
+          // queue entry so it's visible without digging through logs,
+          // and move on.
+          result.facebookCommentError = commentErr.message;
           console.warn("  ⚠️ Facebook comment failed (post still succeeded):", commentErr.message);
         }
       }
@@ -436,6 +439,7 @@ async function main() {
           result.instagramComment = comment;
           console.log("  💬 Comment added to Instagram post:", comment.id);
         } catch (commentErr) {
+          result.instagramCommentError = commentErr.message;
           console.warn("  ⚠️ Instagram comment failed (post still succeeded):", commentErr.message);
         }
       }
