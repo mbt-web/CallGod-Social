@@ -8,10 +8,18 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "122123113077433037",
+        "post_id": "1234653859733571_122123113113433037"
+      },
+      "instagram": {
+        "id": "17996694540030702"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-14T01:00:58.116Z"
   },
   {
     "id": "2026-09-17-daily-verse-video",
@@ -23,10 +31,21 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "2183846945513194"
+      },
+      "instagram": {
+        "id": "18208573834374207"
+      },
+      "youtube": {
+        "id": "-yv1WObJZ2M",
+        "url": "https://youtu.be/-yv1WObJZ2M"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-14T09:01:50.065Z"
   },
   {
     "id": "2026-09-18-daily-verse-image",
