@@ -133,10 +133,23 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "1430794132504904"
+      },
+      "facebookCommentError": "Facebook comment error: Unsupported post request. Object with ID '1430794132504904' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api",
+      "instagram": {
+        "id": "18443798455134936"
+      },
+      "instagramCommentError": "Instagram comment error: (#10) Application does not have permission for this action",
+      "youtube": {
+        "id": "8v-ojdbBTj8",
+        "url": "https://youtu.be/8v-ojdbBTj8"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-16T09:01:23.271Z"
   },
   {
     "id": "2026-09-20-daily-verse-image",
