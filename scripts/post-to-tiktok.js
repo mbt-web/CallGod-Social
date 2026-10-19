@@ -1,20 +1,30 @@
 /**
- * Call God — TikTok poster (Content Posting API, Direct Post)
+ * Call God — TikTok poster (Content Posting API)
  * ------------------------------------------------------------------
- * Uploads a video to TikTok using FILE_UPLOAD (the script downloads
- * the video from mediaUrl, then uploads the bytes to TikTok).
- * FILE_UPLOAD is used instead of PULL_FROM_URL because PULL_FROM_URL
- * requires a URL prefix verified in the TikTok portal, which isn't
- * possible for raw.githubusercontent.com.
+ * Uploads a video to TikTok with FILE_UPLOAD: the script downloads the
+ * video from mediaUrl, then sends the bytes to TikTok. (PULL_FROM_URL is
+ * not used because it needs a verified URL prefix, which isn't possible
+ * for raw.githubusercontent.com.)
  *
- * ENV VARS (GitHub Actions secrets):
- *   TIKTOK_CLIENT_KEY      From the TikTok developer portal
- *   TIKTOK_CLIENT_SECRET   From the TikTok developer portal
- *   TIKTOK_REFRESH_TOKEN   From scripts/get-tiktok-token.js (one-time)
- *   TIKTOK_PRIVACY_LEVEL   Optional. Default PUBLIC_TO_EVERYONE.
- *                          Unaudited apps can only post privately
- *                          (SELF_ONLY); this module falls back to
- *                          SELF_ONLY automatically if needed.
+ * TWO MODES, chosen with TIKTOK_MODE:
+ *
+ *   inbox  (default)  Sends the video to the Call God TikTok account as a
+ *                     DRAFT. Needs the "video.upload" scope. TikTok then
+ *                     notifies that account's inbox; open TikTok, tap the
+ *                     notification, add the caption and tap Post.
+ *                     The draft request has no caption or privacy field,
+ *                     so the caption is NOT carried over by the API.
+ *
+ *   direct            Posts straight to the account with the caption and a
+ *                     privacy level. Needs the "video.publish" scope, which
+ *                     TikTok must approve for the app (Direct Post). New
+ *                     apps may be limited to private (SELF_ONLY) posts until
+ *                     TikTok audits them.
+ *
+ * ENV VARS (GitHub Actions secrets / env):
+ *   TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN
+ *   TIKTOK_MODE            "inbox" (default) or "direct"
+ *   TIKTOK_PRIVACY_LEVEL   direct mode only. Default PUBLIC_TO_EVERYONE.
  */
 
 const TIKTOK_API = "https://open.tiktokapis.com/v2";
@@ -22,6 +32,7 @@ const TIKTOK_API = "https://open.tiktokapis.com/v2";
 const CLIENT_KEY = process.env.TIKTOK_CLIENT_KEY;
 const CLIENT_SECRET = process.env.TIKTOK_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.TIKTOK_REFRESH_TOKEN;
+const MODE = (process.env.TIKTOK_MODE || "inbox").toLowerCase();
 const PREFERRED_PRIVACY = process.env.TIKTOK_PRIVACY_LEVEL || "PUBLIC_TO_EVERYONE";
 
 const POLL_INTERVAL_MS = 5000;
@@ -116,7 +127,17 @@ function planChunks(size) {
   };
 }
 
-async function initUpload(accessToken, { title, privacyLevel, size, plan }) {
+function sourceInfo(size, plan) {
+  return {
+    source: "FILE_UPLOAD",
+    video_size: size,
+    chunk_size: plan.chunkSize,
+    total_chunk_count: plan.totalChunks,
+  };
+}
+
+// Direct post: caption + privacy go in post_info.
+async function initDirect(accessToken, { title, privacyLevel, size, plan }) {
   return tiktokPost(accessToken, "/post/publish/video/init/", {
     post_info: {
       title,
@@ -126,12 +147,14 @@ async function initUpload(accessToken, { title, privacyLevel, size, plan }) {
       disable_stitch: false,
       video_cover_timestamp_ms: 1000,
     },
-    source_info: {
-      source: "FILE_UPLOAD",
-      video_size: size,
-      chunk_size: plan.chunkSize,
-      total_chunk_count: plan.totalChunks,
-    },
+    source_info: sourceInfo(size, plan),
+  });
+}
+
+// Draft upload: source_info only. TikTok has no caption/privacy field here.
+async function initInbox(accessToken, { size, plan }) {
+  return tiktokPost(accessToken, "/post/publish/inbox/video/init/", {
+    source_info: sourceInfo(size, plan),
   });
 }
 
@@ -159,7 +182,7 @@ async function uploadChunks(uploadUrl, buffer, plan) {
   }
 }
 
-async function waitForPublish(accessToken, publishId) {
+async function waitForStatus(accessToken, publishId, doneStatuses) {
   for (let attempt = 0; attempt < POLL_MAX_ATTEMPTS; attempt++) {
     const data = await tiktokPost(accessToken, "/post/publish/status/fetch/", {
       publish_id: publishId,
@@ -169,20 +192,23 @@ async function waitForPublish(accessToken, publishId) {
     }
 
     const status = data.data && data.data.status;
-    if (status === "PUBLISH_COMPLETE") return data.data;
+    if (doneStatuses.includes(status)) return data.data;
     if (status === "FAILED") {
-      throw new Error(`TikTok publish failed: ${data.data.fail_reason || "unknown reason"}`);
+      throw new Error(`TikTok upload failed: ${data.data.fail_reason || "unknown reason"}`);
     }
 
     console.log(`  ...TikTok status: ${status || "unknown"}, waiting`);
     await sleep(POLL_INTERVAL_MS);
   }
-  throw new Error("Timed out waiting for TikTok to finish publishing.");
+  throw new Error("Timed out waiting for TikTok to finish processing the video.");
 }
 
 async function postToTikTok({ caption, mediaUrl, mediaType }) {
   if (mediaType !== "video") {
     throw new Error("TikTok posting only supports video media types.");
+  }
+  if (MODE !== "inbox" && MODE !== "direct") {
+    throw new Error(`Unknown TIKTOK_MODE "${MODE}". Use "inbox" or "direct".`);
   }
 
   const accessToken = await getAccessToken();
@@ -194,28 +220,45 @@ async function postToTikTok({ caption, mediaUrl, mediaType }) {
   }
   const buffer = Buffer.from(await videoRes.arrayBuffer());
   const plan = planChunks(buffer.length);
-  const title = caption.length > 2200 ? caption.slice(0, 2197) + "..." : caption;
 
+  if (MODE === "inbox") {
+    const init = await initInbox(accessToken, { size: buffer.length, plan });
+    if (!isOk(init)) throw new Error(`TikTok init error: ${describeError(init)}`);
+
+    const { publish_id: publishId, upload_url: uploadUrl } = init.data;
+    console.log(`  Uploading draft to TikTok (${plan.totalChunks} chunk(s))...`);
+    await uploadChunks(uploadUrl, buffer, plan);
+
+    // SEND_TO_USER_INBOX = the draft reached the account's inbox.
+    // PUBLISH_COMPLETE = it has already been posted from there.
+    const status = await waitForStatus(accessToken, publishId, ["SEND_TO_USER_INBOX", "PUBLISH_COMPLETE"]);
+    return {
+      publishId,
+      mode: "inbox",
+      status,
+      summary: "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post.",
+    };
+  }
+
+  // direct mode
+  const title = caption.length > 2200 ? caption.slice(0, 2197) + "..." : caption;
   let privacyLevel = await pickPrivacyLevel(accessToken);
-  let init = await initUpload(accessToken, { title, privacyLevel, size: buffer.length, plan });
+  let init = await initDirect(accessToken, { title, privacyLevel, size: buffer.length, plan });
 
   // Unaudited apps are limited to private posts. Retry privately instead of failing.
   if (!isOk(init) && init.error.code === "unaudited_client_can_only_post_to_private_accounts") {
-    console.warn("  ⚠️ TikTok app not audited for public posting yet — posting as SELF_ONLY (private).");
+    console.warn("  ⚠️ TikTok app not audited for public posting yet. Posting as SELF_ONLY (private).");
     privacyLevel = "SELF_ONLY";
-    init = await initUpload(accessToken, { title, privacyLevel, size: buffer.length, plan });
+    init = await initDirect(accessToken, { title, privacyLevel, size: buffer.length, plan });
   }
-
-  if (!isOk(init)) {
-    throw new Error(`TikTok init error: ${describeError(init)}`);
-  }
+  if (!isOk(init)) throw new Error(`TikTok init error: ${describeError(init)}`);
 
   const { publish_id: publishId, upload_url: uploadUrl } = init.data;
   console.log(`  Uploading to TikTok (${plan.totalChunks} chunk(s), privacy ${privacyLevel})...`);
   await uploadChunks(uploadUrl, buffer, plan);
 
-  const status = await waitForPublish(accessToken, publishId);
-  return { publishId, privacyLevel, status };
+  const status = await waitForStatus(accessToken, publishId, ["PUBLISH_COMPLETE"]);
+  return { publishId, mode: "direct", privacyLevel, status, summary: `posted (${privacyLevel})` };
 }
 
 module.exports = { postToTikTok };

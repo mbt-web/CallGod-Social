@@ -468,7 +468,7 @@ async function main() {
   } else if (platforms.includes("tiktok")) {
     try {
       result.tiktok = await postToTikTok({ ...item, mediaType });
-      console.log("✅ Posted to TikTok:", result.tiktok.publishId, `(${result.tiktok.privacyLevel})`);
+      console.log("✅ TikTok:", result.tiktok.publishId, "-", result.tiktok.summary);
     } catch (err) {
       hadError = true;
       errorMessage += `TikTok: ${err.message}. `;
