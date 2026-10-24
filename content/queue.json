@@ -592,10 +592,23 @@
       "instagram",
       "youtube"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "2067487963909739"
+      },
+      "facebookCommentError": "Facebook comment error: (#200) Permissions error",
+      "instagram": {
+        "id": "18451432117192600"
+      },
+      "instagramCommentError": "Instagram comment error: (#10) Application does not have permission for this action",
+      "youtube": {
+        "id": "90S-6LPKR04",
+        "url": "https://youtu.be/90S-6LPKR04"
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-10-24T09:01:34.605Z"
   },
   {
     "id": "2026-09-29-daily-verse-image",
