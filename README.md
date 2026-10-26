@@ -148,10 +148,25 @@ with `"status": "pending"`, top to bottom.
 
 ## 6. TikTok
 
-Not included — TikTok's Content Posting API requires separate
-developer approval (a slower process). Post to TikTok manually for
-now; happy to add a TikTok step to this same workflow once you have
-API access.
+Video items that list `"tiktok"` in `platforms` are uploaded by
+`scripts/post-to-tiktok.js`. The queue builder adds `"tiktok"` to every
+new video entry.
+
+GitHub secrets needed: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`,
+`TIKTOK_REFRESH_TOKEN` (get the refresh token with
+`scripts/get-tiktok-token.js`; the steps are at the top of that file).
+
+- **Draft mode (default, `TIKTOK_MODE` unset or `inbox`):** needs the
+  `video.upload` scope. The video lands in the Call God TikTok inbox as a
+  draft. Open TikTok, tap the notification, paste the caption and post.
+  The API does not send the caption in this mode.
+- **Direct mode (`TIKTOK_MODE=direct`):** needs the `video.publish` scope
+  and TikTok's Direct Post approval. Posts with the caption. Until TikTok
+  audits the app, posts are private (`SELF_ONLY`).
+
+If TikTok fails, the other platforms still post; the item is marked
+`failed` with the TikTok error, and a re-run skips platforms that already
+succeeded.
 
 ---
 

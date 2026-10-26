@@ -19,7 +19,7 @@
  * Images and videos are separate queue entries (they post at different
  * times). Platform defaults for NEW entries:
  *   image -> facebook, instagram
- *   video -> facebook, instagram, youtube
+ *   video -> facebook, instagram, youtube, tiktok
  *
  * USAGE (run from inside CallGod-Social, after `git pull origin main`):
  *   node scripts/build-queue-from-media.js            # apply
@@ -171,7 +171,7 @@ function main() {
         caption: entry.caption,
         mediaType: "video",
         mediaUrl: buildRawUrl("videos", dateId, video.ext),
-        platforms: [...basePlatforms, "youtube"],
+        platforms: [...basePlatforms, "youtube", "tiktok"],
         comments,
       });
     }
