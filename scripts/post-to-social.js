@@ -102,13 +102,41 @@ function sleep(ms) {
 
 // ---------------- Facebook ----------------
 
+// Facebook Page endpoints (video upload, comments as the Page) need a
+// PAGE access token. If META_PAGE_ACCESS_TOKEN is a system user token,
+// exchange it for the Page's own token once per run. If the secret is
+// already a Page token (or the exchange fails), use it as-is.
+let cachedPageToken = null;
+async function getFacebookPageToken() {
+  if (cachedPageToken) return cachedPageToken;
+  try {
+    const res = await fetch(
+      `${GRAPH_BASE}/${PAGE_ID}?fields=access_token&access_token=${PAGE_ACCESS_TOKEN}`
+    );
+    const data = await res.json();
+    if (data.access_token) {
+      cachedPageToken = data.access_token;
+      console.log("  Using Page access token for Facebook.");
+      return cachedPageToken;
+    }
+    console.warn(
+      "  ⚠️ Could not get a Page token, using META_PAGE_ACCESS_TOKEN as-is:",
+      data.error ? data.error.message : "no access_token returned"
+    );
+  } catch (err) {
+    console.warn("  ⚠️ Page token lookup failed, using META_PAGE_ACCESS_TOKEN as-is:", err.message);
+  }
+  cachedPageToken = PAGE_ACCESS_TOKEN;
+  return cachedPageToken;
+}
+
 async function postToFacebook({ caption, mediaUrl, mediaType }) {
   if (mediaType === "video") {
     const url = `${GRAPH_BASE}/${PAGE_ID}/videos`;
     const params = new URLSearchParams({
       description: caption,
       file_url: mediaUrl,
-      access_token: PAGE_ACCESS_TOKEN,
+      access_token: await getFacebookPageToken(),
     });
     const res = await fetch(url, { method: "POST", body: params });
     const data = await res.json();
@@ -120,7 +148,7 @@ async function postToFacebook({ caption, mediaUrl, mediaType }) {
   const params = new URLSearchParams({
     caption,
     url: mediaUrl,
-    access_token: PAGE_ACCESS_TOKEN,
+    access_token: await getFacebookPageToken(),
   });
   const res = await fetch(url, { method: "POST", body: params });
   const data = await res.json();
@@ -138,7 +166,7 @@ async function postCommentToFacebook(objectId, commentText) {
   const url = `${GRAPH_BASE}/${objectId}/comments`;
   const params = new URLSearchParams({
     message: commentText,
-    access_token: PAGE_ACCESS_TOKEN,
+    access_token: await getFacebookPageToken(),
   });
   const res = await fetch(url, { method: "POST", body: params });
   const data = await res.json();
