@@ -57,7 +57,7 @@ const DEFAULT_COMMENT_FACEBOOK = [
   "",
   "🙏 Stay connected with Call God:",
   "▶️ YouTube: https://www.youtube.com/@CallGodApp",
-  "📸 Instagram: https://www.instagram.com/callgod.app/",
+  "📸 Instagram: https://www.instagram.com/call.god_com/",
   "🎵 TikTok: https://www.tiktok.com/@appcallgod",
   "",
   "👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
@@ -66,7 +66,7 @@ const DEFAULT_COMMENT_FACEBOOK = [
 const DEFAULT_COMMENT_INSTAGRAM = [
   "📲 Download Call God free: www.call-god.com",
   "",
-  "🙏 Follow @callgod.app for your daily verse, and join us on:",
+  "🙏 Follow @call.god_com for your daily verse, and join us on:",
   "▶️ YouTube: @CallGodApp",
   "🎵 TikTok: @appcallgod",
   "",
