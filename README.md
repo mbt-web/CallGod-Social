@@ -156,11 +156,11 @@ GitHub secrets needed: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`,
 `TIKTOK_REFRESH_TOKEN` (get the refresh token with
 `scripts/get-tiktok-token.js`; the steps are at the top of that file).
 
-- **Draft mode (default, `TIKTOK_MODE` unset or `inbox`):** needs the
+- **Draft mode (`TIKTOK_MODE=MEDIA_UPLOAD`):** needs the
   `video.upload` scope. The video lands in the Call God TikTok inbox as a
   draft. Open TikTok, tap the notification, paste the caption and post.
   The API does not send the caption in this mode.
-- **Direct mode (`TIKTOK_MODE=direct`):** needs the `video.publish` scope
+- **Direct post (default, `TIKTOK_MODE` unset or `DIRECT_POST`):** needs the `video.publish` scope
   and TikTok's Direct Post approval. Posts with the caption. Until TikTok
   audits the app, posts are private (`SELF_ONLY`).
 

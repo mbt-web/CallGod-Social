@@ -6,16 +6,18 @@
  * not used because it needs a verified URL prefix, which isn't possible
  * for raw.githubusercontent.com.)
  *
- * TWO MODES, chosen with TIKTOK_MODE:
+ * TWO MODES, chosen with TIKTOK_MODE (DIRECT_POST is the default):
  *
- *   inbox  (default)  Sends the video to the Call God TikTok account as a
+ *   inbox / MEDIA_UPLOAD
+ *                     Sends the video to the Call God TikTok account as a
  *                     DRAFT. Needs the "video.upload" scope. TikTok then
  *                     notifies that account's inbox; open TikTok, tap the
  *                     notification, add the caption and tap Post.
  *                     The draft request has no caption or privacy field,
  *                     so the caption is NOT carried over by the API.
  *
- *   direct            Posts straight to the account with the caption and a
+ *   direct / DIRECT_POST  (default)
+ *                     Posts straight to the account with the caption and a
  *                     privacy level. Needs the "video.publish" scope, which
  *                     TikTok must approve for the app (Direct Post). New
  *                     apps may be limited to private (SELF_ONLY) posts until
@@ -23,7 +25,8 @@
  *
  * ENV VARS (GitHub Actions secrets / env):
  *   TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN
- *   TIKTOK_MODE            "inbox" (default) or "direct"
+ *   TIKTOK_MODE            "DIRECT_POST" (default) or "MEDIA_UPLOAD"
+ *                          ("direct" / "inbox" also accepted)
  *   TIKTOK_PRIVACY_LEVEL   direct mode only. Default PUBLIC_TO_EVERYONE.
  */
 
@@ -32,7 +35,11 @@ const TIKTOK_API = "https://open.tiktokapis.com/v2";
 const CLIENT_KEY = process.env.TIKTOK_CLIENT_KEY;
 const CLIENT_SECRET = process.env.TIKTOK_CLIENT_SECRET;
 const REFRESH_TOKEN = process.env.TIKTOK_REFRESH_TOKEN;
-const MODE = (process.env.TIKTOK_MODE || "inbox").toLowerCase();
+// DIRECT_POST = publish with caption (video.publish scope).
+// MEDIA_UPLOAD = send to the TikTok inbox as a draft (video.upload scope).
+const MODE_ALIASES = { direct_post: "direct", direct: "direct", media_upload: "inbox", inbox: "inbox" };
+const RAW_MODE = (process.env.TIKTOK_MODE || "DIRECT_POST").trim().toLowerCase();
+const MODE = MODE_ALIASES[RAW_MODE] || RAW_MODE;
 const PREFERRED_PRIVACY = process.env.TIKTOK_PRIVACY_LEVEL || "PUBLIC_TO_EVERYONE";
 
 const POLL_INTERVAL_MS = 5000;
@@ -208,7 +215,7 @@ async function postToTikTok({ caption, mediaUrl, mediaType }) {
     throw new Error("TikTok posting only supports video media types.");
   }
   if (MODE !== "inbox" && MODE !== "direct") {
-    throw new Error(`Unknown TIKTOK_MODE "${MODE}". Use "inbox" or "direct".`);
+    throw new Error(`Unknown TIKTOK_MODE "${RAW_MODE}". Use "DIRECT_POST" or "MEDIA_UPLOAD".`);
   }
 
   const accessToken = await getAccessToken();
