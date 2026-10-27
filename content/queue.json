@@ -681,7 +681,7 @@
       "facebook",
       "instagram"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18151525852551969"
@@ -690,7 +690,7 @@
         "id": "18144900184611117"
       }
     },
-    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
+    "error": null,
     "postedAt": "2026-10-27T01:00:53.120Z"
   },
   {
@@ -760,7 +760,7 @@
       "youtube",
       "tiktok"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18115951367088085"
@@ -781,7 +781,7 @@
         "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
+    "error": null,
     "postedAt": "2026-10-26T11:03:14.865Z"
   },
   {
@@ -809,7 +809,7 @@
       "youtube",
       "tiktok"
     ],
-    "status": "failed",
+    "status": "pending",
     "result": {
       "instagram": {
         "id": "18124570687898863"
@@ -830,7 +830,7 @@
         "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
       }
     },
-    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
+    "error": null,
     "postedAt": "2026-10-27T09:01:58.109Z"
   },
   {
