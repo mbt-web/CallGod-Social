@@ -681,10 +681,17 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18151525852551969"
+      },
+      "instagramComment": {
+        "id": "18144900184611117"
+      }
+    },
+    "error": "FB: Facebook error: (#200) The permission(s) publish_actions are not available. It has been deprecated. If you want to provide a way for your app users to share content to Facebook, we encourage you to use our Sharing products instead..",
+    "postedAt": "2026-10-27T01:00:53.120Z"
   },
   {
     "id": "2026-10-01-daily-verse-image",
