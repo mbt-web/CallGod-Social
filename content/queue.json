@@ -809,10 +809,29 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null
+    "status": "failed",
+    "result": {
+      "instagram": {
+        "id": "18124570687898863"
+      },
+      "instagramComment": {
+        "id": "18010983557776034"
+      },
+      "youtube": {
+        "id": "VtvD_kJFfF0",
+        "url": "https://youtu.be/VtvD_kJFfF0"
+      },
+      "tiktok": {
+        "publishId": "v_inbox_file~v2.7701270074213713972",
+        "mode": "inbox",
+        "status": {
+          "status": "SEND_TO_USER_INBOX"
+        },
+        "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
+      }
+    },
+    "error": "FB: Facebook video error: (#100) No permission to publish the video.",
+    "postedAt": "2026-10-27T09:01:58.109Z"
   },
   {
     "id": "2026-10-04-daily-verse-image",
