@@ -45,7 +45,9 @@
       }
     },
     "error": null,
-    "postedAt": "2026-10-14T09:01:50.065Z"
+    "postedAt": "2026-10-14T09:01:50.065Z",
+    "tiktokBackfillAttempts": 1,
+    "tiktokBackfillError": "TikTok creator info error: scope_not_authorized: The user did not authorize the scope required for completing this request."
   },
   {
     "id": "2026-09-18-daily-verse-image",
@@ -822,7 +824,7 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": {
       "instagram": {
         "id": "18124570687898863"
@@ -844,7 +846,8 @@
       }
     },
     "error": null,
-    "postedAt": "2026-10-27T09:01:58.109Z"
+    "postedAt": "2026-10-27T09:01:58.109Z",
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-04-daily-verse-image",
@@ -871,10 +874,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-05-daily-verse-image",
@@ -901,10 +905,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-06-daily-verse-image",
@@ -931,10 +936,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-07-daily-verse-image",
@@ -961,10 +967,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-08-daily-verse-image",
@@ -991,10 +998,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-09-daily-verse-image",
@@ -1021,10 +1029,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-10-daily-verse-image",
@@ -1051,10 +1060,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-11-daily-verse-image",
@@ -1081,10 +1091,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-12-daily-verse-image",
@@ -1111,10 +1122,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-13-daily-verse-image",
@@ -1141,10 +1153,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-14-daily-verse-image",
@@ -1171,10 +1184,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-15-daily-verse-image",
@@ -1201,10 +1215,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-16-daily-verse-image",
@@ -1231,10 +1246,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-17-daily-verse-image",
@@ -1261,10 +1277,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-18-daily-verse-image",
@@ -1291,10 +1308,11 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
-    "postedAt": null
+    "postedAt": null,
+    "skippedAt": "2026-10-28T12:42:18.620Z"
   },
   {
     "id": "2026-10-19-daily-verse-image",
@@ -1323,12 +1341,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🙏 Where does your soul need rest today? Share your prayer below.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🙏 Where does your soul need rest today? Share your prayer below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🙏 Where does your soul need rest today? Share your prayer below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-20-daily-verse-image",
@@ -1357,12 +1376,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🕊️ Type \"Amen\" if you're claiming God's perfect peace today.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🕊️ Type \"Amen\" if you're claiming God's perfect peace today.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🕊️ Type \"Amen\" if you're claiming God's perfect peace today.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-21-daily-verse-image",
@@ -1391,12 +1411,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "💛 What trouble are you handing to Jesus today? We're praying with you.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "💛 What trouble are you handing to Jesus today? We're praying with you.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "💛 What trouble are you handing to Jesus today? We're praying with you.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-22-daily-verse-image",
@@ -1425,12 +1446,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🙏 Name one blessing you're thankful for today.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🙏 Name one blessing you're thankful for today.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🙏 Name one blessing you're thankful for today.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-23-daily-verse-image",
@@ -1459,12 +1481,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "❤️ Nothing can separate you from God's love. Type \"Amen\" if you believe it.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "❤️ Nothing can separate you from God's love. Type \"Amen\" if you believe it.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "❤️ Nothing can separate you from God's love. Type \"Amen\" if you believe it.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-24-daily-verse-image",
@@ -1493,12 +1516,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🎶 God sings over you! Share how you've felt His love this week.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🎶 God sings over you! Share how you've felt His love this week.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🎶 God sings over you! Share how you've felt His love this week.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-25-daily-verse-image",
@@ -1527,12 +1551,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🕯️ How will you let your light shine today? Tell us below.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🕯️ How will you let your light shine today? Tell us below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🕯️ How will you let your light shine today? Tell us below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-26-daily-verse-image",
@@ -1561,12 +1586,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "📖 What verse is lighting your path right now?\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "📖 What verse is lighting your path right now?\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "📖 What verse is lighting your path right now?\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-27-daily-verse-image",
@@ -1595,12 +1621,13 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "skipped",
     "result": null,
     "error": null,
     "postedAt": null,
     "commentFacebook": "🙏 What decision do you need wisdom for? Pray it below and we'll pray with you.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
-    "commentInstagram": "🙏 What decision do you need wisdom for? Pray it below and we'll pray with you.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
+    "commentInstagram": "🙏 What decision do you need wisdom for? Pray it below and we'll pray with you.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
+    "skippedAt": "2026-10-28T12:42:18.621Z"
   },
   {
     "id": "2026-10-28-daily-verse-image",
@@ -1629,10 +1656,27 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
-    "result": null,
-    "error": null,
-    "postedAt": null,
+    "status": "failed",
+    "result": {
+      "facebook": {
+        "id": "1140332235223458"
+      },
+      "facebookComment": {
+        "id": "1140332235223458_1146063094574619"
+      },
+      "instagram": {
+        "id": "18090279467273184"
+      },
+      "instagramComment": {
+        "id": "18104997092532665"
+      },
+      "youtube": {
+        "id": "DOBaQ3W020w",
+        "url": "https://youtu.be/DOBaQ3W020w"
+      }
+    },
+    "error": "TikTok: TikTok creator info error: scope_not_authorized: The user did not authorize the scope required for completing this request..",
+    "postedAt": "2026-10-28T12:43:17.107Z",
     "commentFacebook": "💪 Which fear are you giving to God today?\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
     "commentInstagram": "💪 Which fear are you giving to God today?\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
   },
