@@ -767,7 +767,7 @@
       "youtube",
       "tiktok"
     ],
-    "status": "pending",
+    "status": "posted",
     "result": {
       "instagram": {
         "id": "18115951367088085"
@@ -786,10 +786,16 @@
           "status": "SEND_TO_USER_INBOX"
         },
         "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
+      },
+      "facebook": {
+        "id": "1076069638597889"
+      },
+      "facebookComment": {
+        "id": "1076069638597889_1585189236216339"
       }
     },
     "error": null,
-    "postedAt": "2026-10-26T11:03:14.865Z"
+    "postedAt": "2026-10-28T09:00:52.117Z"
   },
   {
     "id": "2026-10-03-daily-verse-image",
