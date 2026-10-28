@@ -134,6 +134,25 @@ with `"status": "pending"`, top to bottom.
   whether it succeeded, and the resulting post ID — right in your
   git history.
 
+### Posting follows the calendar
+
+Queue ids start with the content date (`2026-10-28-daily-verse-image`).
+Each run posts only the item dated **today in Manila**:
+
+- Pending items dated before today are marked `"status": "skipped"` and
+  never posted, so a missed day doesn't push the queue behind.
+- Items dated after today wait for their day.
+- To post a specific day's item by hand, set `POST_DATE=YYYY-MM-DD`.
+
+### TikTok catch-up
+
+Each video run also posts **one** older video to TikTok, oldest first, if
+it went out on Facebook/Instagram/YouTube but never went live on TikTok
+(including ones only sent to the TikTok inbox as drafts). Skipped items are
+not included. A video that fails 3 times is left alone
+(`tiktokBackfillError` in the queue shows why). Set `TIKTOK_BACKFILL=off`
+to stop it.
+
 ---
 
 ## 5. Testing before relying on the schedule

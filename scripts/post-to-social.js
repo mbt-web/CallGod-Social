@@ -389,28 +389,86 @@ async function postToYouTube({ caption, mediaUrl, mediaType }) {
   return { id: uploadData.id, url: `https://youtu.be/${uploadData.id}` };
 }
 
-// ---------------- Main ----------------
+// ---------------- Posting calendar ----------------
 
-async function main() {
-  assertEnv();
-  const queue = loadQueue();
-  const typeFilter = process.env.MEDIA_TYPE_FILTER;
+// Queue ids start with the content date (YYYY-MM-DD). Each run posts only
+// the item dated TODAY in Manila. Pending items from earlier dates are
+// marked "skipped", so a missed day never pushes the queue behind again.
+// Set POST_DATE=YYYY-MM-DD to post a specific day's item instead.
+const POST_TIMEZONE = "Asia/Manila";
 
-  const nextIndex = queue.findIndex((item) => {
-    if (item.status !== "pending") return false;
-    if (typeFilter && (item.mediaType || "image") !== typeFilter) return false;
-    return true;
-  });
+function todayInManila() {
+  if (process.env.POST_DATE) return process.env.POST_DATE;
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: POST_TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
 
-  if (nextIndex === -1) {
-    console.log(
-      typeFilter
-        ? `No pending "${typeFilter}" posts in the queue. Nothing to do.`
-        : "No pending posts in the queue. Nothing to do."
-    );
+function itemDate(item) {
+  const m = /^(\d{4}-\d{2}-\d{2})/.exec(item.id || "");
+  return m ? m[1] : null;
+}
+
+// ---------------- TikTok backfill ----------------
+
+// Videos that went out on Facebook/Instagram/YouTube before TikTok was working (or only sent to the TikTok inbox
+// as drafts) never went live on TikTok. Each video run also posts ONE of
+// them to TikTok, oldest first, until none are left. Set TIKTOK_BACKFILL=off
+// to stop. A video that fails 3 times is left alone.
+const TIKTOK_BACKFILL_MAX_ATTEMPTS = 3;
+
+function needsTikTokBackfill(item, today) {
+  if ((item.mediaType || "image") !== "video") return false;
+  if (item.status === "pending") return false;
+  const date = itemDate(item);
+  if (!date || date >= today) return false;
+  if ((item.tiktokBackfillAttempts || 0) >= TIKTOK_BACKFILL_MAX_ATTEMPTS) return false;
+  // Only videos that actually went out on another platform. Skipped ones never did.
+  const r = item.result || {};
+  if (!r.facebook && !r.instagram && !r.youtube) return false;
+  const tiktok = item.result && item.result.tiktok;
+  return !tiktok || tiktok.mode === "inbox";
+}
+
+async function runTikTokBackfill(queue, today) {
+  if ((process.env.TIKTOK_BACKFILL || "on").toLowerCase() === "off") return;
+
+  const waiting = queue.filter((i) => needsTikTokBackfill(i, today));
+  if (!waiting.length) {
+    console.log("TikTok backfill: all caught up.");
     return;
   }
 
+  const idx = queue.indexOf(waiting[0]);
+  const item = queue[idx];
+  console.log(`TikTok backfill: "${item.id}" (${waiting.length} left, including this one)`);
+
+  try {
+    const tiktok = await postToTikTok({ ...item, mediaType: "video" });
+    queue[idx] = {
+      ...item,
+      result: { ...(item.result || {}), tiktok },
+      tiktokBackfilledAt: new Date().toISOString(),
+      tiktokBackfillError: null,
+    };
+    console.log("✅ TikTok backfill:", tiktok.publishId, "-", tiktok.summary);
+  } catch (err) {
+    // Never fails the run: today's post is what matters.
+    queue[idx] = {
+      ...item,
+      tiktokBackfillAttempts: (item.tiktokBackfillAttempts || 0) + 1,
+      tiktokBackfillError: err.message,
+    };
+    console.warn("⚠️ TikTok backfill failed (today's post not affected):", err.message);
+  }
+}
+
+// ---------------- Post one item ----------------
+
+async function postItem(queue, nextIndex) {
   const item = queue[nextIndex];
   const mediaType = item.mediaType || "image";
   const platforms = item.platforms || ["facebook", "instagram"];
@@ -511,6 +569,55 @@ async function main() {
     error: hadError ? errorMessage.trim() : null,
     postedAt: new Date().toISOString(),
   };
+
+  return hadError;
+}
+
+// ---------------- Main ----------------
+
+async function main() {
+  assertEnv();
+  const queue = loadQueue();
+  const typeFilter = process.env.MEDIA_TYPE_FILTER;
+  const today = todayInManila();
+  const matchesType = (item) => !typeFilter || (item.mediaType || "image") === typeFilter;
+
+  console.log(`Posting date (Manila): ${today}${typeFilter ? `, type: ${typeFilter}` : ""}`);
+
+  // 1. Pending items from before today are out of date: skip them.
+  const skipped = [];
+  queue.forEach((item, i) => {
+    const date = itemDate(item);
+    if (item.status === "pending" && matchesType(item) && date && date < today) {
+      queue[i] = { ...item, status: "skipped", skippedAt: new Date().toISOString() };
+      skipped.push(item.id);
+    }
+  });
+  if (skipped.length) {
+    console.log(
+      `⏭️  Skipped ${skipped.length} out-of-date item(s): ${skipped[0]}` +
+        (skipped.length > 1 ? ` ... ${skipped[skipped.length - 1]}` : "")
+    );
+  }
+
+  // 2. Post today's item (undated items are still allowed, in queue order).
+  const nextIndex = queue.findIndex((item) => {
+    if (item.status !== "pending" || !matchesType(item)) return false;
+    const date = itemDate(item);
+    return !date || date === today;
+  });
+
+  let hadError = false;
+  if (nextIndex === -1) {
+    console.log(`No ${typeFilter ? `"${typeFilter}" ` : ""}item dated ${today} in the queue. Nothing to post.`);
+  } else {
+    hadError = await postItem(queue, nextIndex);
+  }
+
+  // 3. Video runs also catch up one old video on TikTok.
+  if (!typeFilter || typeFilter === "video") {
+    await runTikTokBackfill(queue, today);
+  }
 
   saveQueue(queue);
 
