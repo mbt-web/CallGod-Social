@@ -8,11 +8,11 @@
  *     $env:TIKTOK_REDIRECT_URI="the exact redirect URI registered in Login Kit"
  *     node scripts/get-tiktok-token.js url
  *
- * Scopes: by default it asks for "user.info.basic,video.publish" (DIRECT_POST). If TikTok
+ * Scopes: by default it asks for "user.info.basic,video.upload" (MEDIA_UPLOAD drafts). If TikTok
  * shows "Something went wrong ... scope", your app doesn't have one of them.
  * Check Scopes in the TikTok developer portal and request only what is
- * listed there. For inbox drafts (MEDIA_UPLOAD) instead:
- *     $env:TIKTOK_SCOPES="user.info.basic,video.upload"
+ * listed there. For direct posting (DIRECT_POST, once TikTok approves it):
+ *     $env:TIKTOK_SCOPES="user.info.basic,video.publish"
  *
  * Step 2: open that URL, log in as the Call God TikTok account, approve.
  *   TikTok redirects to your redirect URI with ?code=... in the address bar.
@@ -30,7 +30,7 @@
 const CLIENT_KEY = process.env.TIKTOK_CLIENT_KEY;
 const CLIENT_SECRET = process.env.TIKTOK_CLIENT_SECRET;
 const REDIRECT_URI = process.env.TIKTOK_REDIRECT_URI;
-const SCOPES = process.env.TIKTOK_SCOPES || "user.info.basic,video.publish";
+const SCOPES = process.env.TIKTOK_SCOPES || "user.info.basic,video.upload";
 
 const mode = process.argv[2];
 

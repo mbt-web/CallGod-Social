@@ -6,9 +6,9 @@
  * not used because it needs a verified URL prefix, which isn't possible
  * for raw.githubusercontent.com.)
  *
- * TWO MODES, chosen with TIKTOK_MODE (DIRECT_POST is the default):
+ * TWO MODES, chosen with TIKTOK_MODE (MEDIA_UPLOAD is the default):
  *
- *   inbox / MEDIA_UPLOAD
+ *   inbox / MEDIA_UPLOAD  (default)
  *                     Sends the video to the Call God TikTok account as a
  *                     DRAFT. Needs the "video.upload" scope. TikTok then
  *                     notifies that account's inbox; open TikTok, tap the
@@ -16,7 +16,7 @@
  *                     The draft request has no caption or privacy field,
  *                     so the caption is NOT carried over by the API.
  *
- *   direct / DIRECT_POST  (default)
+ *   direct / DIRECT_POST
  *                     Posts straight to the account with the caption and a
  *                     privacy level. Needs the "video.publish" scope, which
  *                     TikTok must approve for the app (Direct Post). New
@@ -25,7 +25,7 @@
  *
  * ENV VARS (GitHub Actions secrets / env):
  *   TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, TIKTOK_REFRESH_TOKEN
- *   TIKTOK_MODE            "DIRECT_POST" (default) or "MEDIA_UPLOAD"
+ *   TIKTOK_MODE            "MEDIA_UPLOAD" (default) or "DIRECT_POST"
  *                          ("direct" / "inbox" also accepted)
  *   TIKTOK_PRIVACY_LEVEL   direct mode only. Default PUBLIC_TO_EVERYONE.
  */
@@ -38,7 +38,7 @@ const REFRESH_TOKEN = process.env.TIKTOK_REFRESH_TOKEN;
 // DIRECT_POST = publish with caption (video.publish scope).
 // MEDIA_UPLOAD = send to the TikTok inbox as a draft (video.upload scope).
 const MODE_ALIASES = { direct_post: "direct", direct: "direct", media_upload: "inbox", inbox: "inbox" };
-const RAW_MODE = (process.env.TIKTOK_MODE || "DIRECT_POST").trim().toLowerCase();
+const RAW_MODE = (process.env.TIKTOK_MODE || "MEDIA_UPLOAD").trim().toLowerCase();
 const MODE = MODE_ALIASES[RAW_MODE] || RAW_MODE;
 const PREFERRED_PRIVACY = process.env.TIKTOK_PRIVACY_LEVEL || "PUBLIC_TO_EVERYONE";
 
@@ -268,4 +268,4 @@ async function postToTikTok({ caption, mediaUrl, mediaType }) {
   return { publishId, mode: "direct", privacyLevel, status, summary: `posted (${privacyLevel})` };
 }
 
-module.exports = { postToTikTok };
+module.exports = { postToTikTok, TIKTOK_MODE: MODE };

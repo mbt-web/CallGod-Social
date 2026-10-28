@@ -146,7 +146,8 @@ Each run posts only the item dated **today in Manila**:
 
 ### TikTok catch-up
 
-Each video run also posts **one** older video to TikTok, oldest first, if
+Only with `TIKTOK_MODE=DIRECT_POST` (paused in draft mode): each video run
+also posts **one** older video to TikTok, oldest first, if
 it went out on Facebook/Instagram/YouTube but never went live on TikTok
 (including ones only sent to the TikTok inbox as drafts). Skipped items are
 not included. A video that fails 3 times is left alone
@@ -175,11 +176,11 @@ GitHub secrets needed: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`,
 `TIKTOK_REFRESH_TOKEN` (get the refresh token with
 `scripts/get-tiktok-token.js`; the steps are at the top of that file).
 
-- **Draft mode (`TIKTOK_MODE=MEDIA_UPLOAD`):** needs the
+- **Draft mode (default, `TIKTOK_MODE` unset or `MEDIA_UPLOAD`):** needs the
   `video.upload` scope. The video lands in the Call God TikTok inbox as a
   draft. Open TikTok, tap the notification, paste the caption and post.
   The API does not send the caption in this mode.
-- **Direct post (default, `TIKTOK_MODE` unset or `DIRECT_POST`):** needs the `video.publish` scope
+- **Direct post (`TIKTOK_MODE=DIRECT_POST`):** needs the `video.publish` scope
   and TikTok's Direct Post approval. Posts with the caption. Until TikTok
   audits the app, posts are private (`SELF_ONLY`).
 

@@ -18,7 +18,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const { postToTikTok } = require("./post-to-tiktok");
+const { postToTikTok, TIKTOK_MODE } = require("./post-to-tiktok");
 
 const GRAPH_API_VERSION = "v21.0";
 const GRAPH_BASE = `https://graph.facebook.com/${GRAPH_API_VERSION}`;
@@ -435,6 +435,12 @@ function needsTikTokBackfill(item, today) {
 
 async function runTikTokBackfill(queue, today) {
   if ((process.env.TIKTOK_BACKFILL || "on").toLowerCase() === "off") return;
+  // Drafts never go live by themselves, so catching up only makes sense
+  // with DIRECT_POST. Resumes automatically when TIKTOK_MODE=DIRECT_POST.
+  if (TIKTOK_MODE !== "direct") {
+    console.log("TikTok backfill: paused (TikTok is in draft mode).");
+    return;
+  }
 
   const waiting = queue.filter((i) => needsTikTokBackfill(i, today));
   if (!waiting.length) {
