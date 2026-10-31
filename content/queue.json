@@ -1862,10 +1862,24 @@
       "facebook",
       "instagram"
     ],
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "122126658921433037",
+        "post_id": "1234653859733571_122126658945433037"
+      },
+      "facebookComment": {
+        "id": "122126658921433037_1439810308335564"
+      },
+      "instagram": {
+        "id": "18160590088508058"
+      },
+      "instagramComment": {
+        "id": "17923844865443986"
+      }
+    },
     "error": null,
-    "postedAt": null,
+    "postedAt": "2026-10-31T01:01:03.389Z",
     "commentFacebook": "🎁 Grace is a gift! Type \"Thank You, Jesus\" below.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
     "commentInstagram": "🎁 Grace is a gift! Type \"Thank You, Jesus\" below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️"
   },
