@@ -3117,10 +3117,35 @@
     ],
     "commentFacebook": "🎁 Every good gift is from above. What gift are you thankful for today?\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
     "commentInstagram": "🎁 Every good gift is from above. What gift are you thankful for today?\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "2947507512293040"
+      },
+      "facebookComment": {
+        "id": "2947507512293040_1148050670943676"
+      },
+      "instagram": {
+        "id": "18101492282445811"
+      },
+      "instagramComment": {
+        "id": "18037472912892828"
+      },
+      "youtube": {
+        "id": "t898Yf01Yi8",
+        "url": "https://youtu.be/t898Yf01Yi8"
+      },
+      "tiktok": {
+        "publishId": "v_inbox_file~v2.7709434034158356501",
+        "mode": "inbox",
+        "status": {
+          "status": "SEND_TO_USER_INBOX"
+        },
+        "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-11-18T09:02:26.742Z"
   },
   {
     "id": "2026-11-19-daily-verse-image",
