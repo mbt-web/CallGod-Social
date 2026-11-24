@@ -3555,10 +3555,35 @@
     ],
     "commentFacebook": "🙏 Pray with faith! What are you believing God for? Write it below.\n\n📲 Download Call God free: https://www.call-god.com\n\n🙏 Stay connected with Call God:\n▶️ YouTube: https://www.youtube.com/@CallGodApp\n📸 Instagram: https://www.instagram.com/call.god_com/\n🎵 TikTok: https://www.tiktok.com/@appcallgod\n\n👍 Like this post, follow our pages and subscribe so you never miss a daily verse. God bless you! 🕊️",
     "commentInstagram": "🙏 Pray with faith! What are you believing God for? Write it below.\n\n📲 Download Call God free: www.call-god.com\n\n🙏 Follow @call.god_com for your daily verse, and join us on:\n▶️ YouTube: @CallGodApp\n🎵 TikTok: @appcallgod\n\n❤️ Like, share and subscribe so you never miss a blessing. God bless you! 🕊️",
-    "status": "pending",
-    "result": null,
+    "status": "posted",
+    "result": {
+      "facebook": {
+        "id": "1618893676652584"
+      },
+      "facebookComment": {
+        "id": "1618893676652584_1672806741180050"
+      },
+      "instagram": {
+        "id": "18587154484079298"
+      },
+      "instagramComment": {
+        "id": "18121941461002201"
+      },
+      "youtube": {
+        "id": "jWy0rZT22Fs",
+        "url": "https://youtu.be/jWy0rZT22Fs"
+      },
+      "tiktok": {
+        "publishId": "v_inbox_file~v2.7711660570931480597",
+        "mode": "inbox",
+        "status": {
+          "status": "SEND_TO_USER_INBOX"
+        },
+        "summary": "draft sent to the TikTok inbox. Open TikTok, tap the notification, add the caption and post."
+      }
+    },
     "error": null,
-    "postedAt": null
+    "postedAt": "2026-11-24T09:02:37.927Z"
   },
   {
     "id": "2026-11-25-daily-verse-image",
